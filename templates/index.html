@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{#
+   Copyright 2012 23andMe, Inc.
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   
+#}
+
+{% block title %}
+Welcome to the 23andMe API example client
+{% endblock %}
+
+{% block body %}
+<h1>Welcome to the 23andme example client</h1>
+<p>This demo will take you through the basic authentication flow</p>
+<p><a href="{{auth_url}}">Click here</a> to authorize this client to access your genetics. After authorizing the application, you will be forwarded back to this application with a code that displays</p>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{#
+   Copyright 2012 23andMe, Inc.
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   
+#}
+
+
+
+{% block body %}
+<h1> Success! </h1>
+
+<p>You've retrieved the following genotypes from the api</p>
+<table>
+    <tr>
+        <th scope='col'>profile id</th>
+        <th scope='col'>rs12913832</th>
+    </tr>
+    {% for p in response_json %}
+    <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.rs12913832}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
