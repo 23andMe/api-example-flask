@@ -1,4 +1,4 @@
-ttam_flask_client
+api-example-flask
 =================
 
-An example client application of 23andMe's API using the flask microframework
+An example Python client application of 23andMe's API using the flask microframework.
