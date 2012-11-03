@@ -1,12 +1,10 @@
 #!/usr/bin/python
 
+import getpass
 import webbrowser
 import requests
 import flask
 from flask import request
-
-import getpass
-
 from optparse import OptionParser
 
 FLASK_PORT = 2323
@@ -42,10 +40,8 @@ if not CLIENT_SECRET:
     print "Please navigate to your developer dashboard [%sdashboard/] to retrieve your client_secret." % BASE_API_URL
     CLIENT_SECRET = getpass.getpass("Please enter your client_secret:")
 
-######## index ##############
-
-#https://api.23andme.com/authorize/?redirect_uri=https://exampleapp.com/receive_code/&response_type=code&client_id=1&scope=basic
-
+# The connect link:
+# https://api.23andme.com/authorize/?redirect_uri=https://exampleapp.com/receive_code/&response_type=code&client_id=1&scope=basic
 
 app = flask.Flask(__name__)
 
@@ -89,7 +85,7 @@ def after_auth_landing():
     else:
         response.raise_for_status()
         
-        
+
 if __name__ == '__main__':
     print "A local client for the Personal Genome API is now initialized."
     app.run(debug=False, port=2323) 
