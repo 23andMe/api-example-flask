@@ -11,8 +11,8 @@ FLASK_PORT = 2323
 DEFAULT_API_SERVER = "api.23andme.com"
 BASE_CLIENT_URL = 'http://localhost:%s/'% FLASK_PORT
 DEFAULT_REDIRECT_URI = '%safter_auth_landing/'  % BASE_CLIENT_URL
-RSIDS_OF_INTEREST = ["rs12913832"]
-DEFAULT_SCOPE = "names basic %s" % (" ".join(RSIDS_OF_INTEREST))
+SNPS = ["rs12913832"]
+DEFAULT_SCOPE = "names basic %s" % (" ".join(SNPS))
 CLIENT_SECRET = None
 
 parser = OptionParser(usage = "usage: %prog -i CLIENT_ID [options]")
@@ -74,7 +74,7 @@ def after_auth_landing():
         headers = {'Authorization': 'Bearer %s' % access_token}
         #print "get the genotypes"
         genotype_response = requests.get("%s%s" % (BASE_API_URL, "1/genotype/"),
-                                         params = {'locations': ' '.join(RSIDS_OF_INTEREST)}, 
+                                         params = {'locations': ' '.join(SNPS)}, 
                                          headers=headers,
                                          verify=False)
         if genotype_response.status_code == 200:
