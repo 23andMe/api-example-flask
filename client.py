@@ -84,4 +84,4 @@ def receive_code():
 
 if __name__ == '__main__':
     print "A local client for the Personal Genome API is now initialized."
-    app.run(debug=False, port=2323)
+    app.run(debug=False, port=PORT)
