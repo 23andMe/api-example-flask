@@ -7,7 +7,7 @@ import flask
 from flask import request
 from optparse import OptionParser
 
-PORT = 2323
+PORT = 5000
 API_SERVER = "api.23andme.com"
 BASE_CLIENT_URL = 'http://localhost:%s/'% PORT
 DEFAULT_REDIRECT_URI = '%sreceive_code/'  % BASE_CLIENT_URL
