@@ -65,8 +65,8 @@ def receive_code():
 
     if response.status_code == 200:
         #print response.JSON
-        access_token, refresh_token = response.json['access_token'], response.json['refresh_token']
-        #print "Access token: %s\nRefresh token: %s\n" % (access_token, refresh_token)
+        access_token = response.json()['access_token']
+        #print "Access token: %s\n" % (access_token)
 
         headers = {'Authorization': 'Bearer %s' % access_token}
         genotype_response = requests.get("%s%s" % (BASE_API_URL, "1/genotype/"),
@@ -74,7 +74,7 @@ def receive_code():
                                          headers=headers,
                                          verify=False)
         if genotype_response.status_code == 200:
-            return flask.render_template('receive_code.html', response_json = genotype_response.json)
+            return flask.render_template('receive_code.html', response_json = genotype_response.json())
         else:
             reponse_text = genotype_response.text
             response.raise_for_status()
