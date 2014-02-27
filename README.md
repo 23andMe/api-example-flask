@@ -1,7 +1,7 @@
 api-example-flask
 =================
 
-An example Python client application of 23andMe's API using the flask microframework.
+An example Python client application of 23andMe's API using the [flask](http://flask.pocoo.org/) microframework.
 
 Clone the repository, create a virtual environment in the directory, and start using it:
 ```
