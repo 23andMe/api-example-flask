@@ -2,3 +2,4 @@ bin/
 local/
 include/
 lib/
+*.Python
